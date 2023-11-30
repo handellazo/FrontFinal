@@ -92,7 +92,7 @@
             <label for="semestre">Semestre:</label>
                 <select  id="semestre" name="semestre" [(ngModel)]="proyectoNuevo.semestre" (change)="getIdSemestre($event)" required>
                     <option selected value="0">Seleccionar Opcion</option>
-                    <option *ngFor="let semestre of semestre" [ngValue]="semestre.id">{{ semestre.semestre}}</option>
+                    <option *ngFor="let semestre of semestre" [ngValue]="semestre.id">{{ semestre.nombre}}</option>
                 </select>
             </div>
             <!-- Ciclo -->

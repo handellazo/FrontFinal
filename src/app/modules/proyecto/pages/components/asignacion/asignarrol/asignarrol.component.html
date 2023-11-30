@@ -1,34 +1,23 @@
-<div class="header">LISTA DE PROYECTOS </div>
+<div class="header">ASIGNAR PROYECTO</div>
 
-<!-- <table>
-    <thead>
+<table class="table table-striped custom-table">
+  <thead class="custom-table-header">
       <tr>
-        <th>Proyectos</th>
-        <th>Semestre</th>
-       
-       
-        <th>Acciones</th>
+          <th>PROYECTO</th>
+          <th>CONVENIO</th>
+          <th>ASIGNAR</th>
+          <th>SEMESTRE</th>
+          <th>ACCIONES</th>
       </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let proyecto of proyectoslist">
-        <td>{{ proyecto.nombre }}</td>
-
-        <td>{{ proyecto.semestre.semestre }}</td>
-      <td>
-          <div class="icon-buttons">
-            <button mat-flat-button color="primary" (click)="onClick()">ASIGNAR</button>
-
-            <button (click)="editItem(proyecto)">
-              <i class="fas fa-pencil-alt"></i>
-            </button>
-            <button (click)="deleteItem(proyecto)">
-              <i class="fas fa-trash-alt"></i>
-            </button> 
-
-          </div>
-        </td>
+  </thead>
+  <tbody>
+      <tr *ngFor="let proyecto of proyecto">
+          <td>{{proyecto.nombre}}</td>
+          <td>{{proyecto.convenio.nombre}}</td>
+          <td><button>Asignar</button></td>
+          <td>{{proyecto.semestre.nombre}}</td>
+          <td><button>Edith</button></td>
+          <!-- Agrega aquí las acciones que deseas mostrar para cada convenio -->
       </tr>
-    </tbody>
-  </table>
-   -->
+  </tbody>
+</table>

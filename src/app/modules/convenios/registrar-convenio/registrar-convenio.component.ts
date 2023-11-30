@@ -7,6 +7,7 @@ import { DatePipe } from '@angular/common';
 import { UbicacionService } from 'src/app/core/services/ubicacion.service';
 import { TipoConvenioService } from 'src/app/core/services/tipoConvenio.service';
 import { Convenio } from 'src/app/core/models/convenio.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar-convenio',
@@ -24,7 +25,8 @@ export class RegistrarConvenioComponent {
 
   constructor(private _ConvenioService: ConvenioService,
               private _UbicacionService: UbicacionService,
-              private _TipoConvenioService: TipoConvenioService) { }
+              private _TipoConvenioService: TipoConvenioService,
+              private _Router: Router) { }
 
   ngOnInit(): void {
     this.getUbicaciones();
@@ -104,13 +106,15 @@ export class RegistrarConvenioComponent {
       console.log("Formato de ID de autor no válido");
     }
   }
+
   addConvenio(){
-    this._ConvenioService.agregarConvenio(this.convenioNuevo).subscribe({
+    this._ConvenioService.addConvenio(this.convenioNuevo).subscribe({
       next: (res:Convenio=new Convenio())=>{
         console.log(this.convenioNuevo);
         console.log(res)
         this.convenioNuevo = res;
         this.getConvenios();
+        this._Router.navigate(['/home/convenio'])
       },error:(error:any)=>{
         console.log("el error es: ", error)
       }

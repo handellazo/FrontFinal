@@ -20,15 +20,15 @@ export class ConvenioService {
     return this.httpClient.get<IConvenio>(`${this.URL}CONVENIO/buscarConvenioPorId/${id}`)
   }
 
-  agregarConvenio(convenio:Convenio){
+  addConvenio(convenio:Convenio){
     return this.httpClient.post<Convenio>(`${this.URL}CONVENIO/addConvenio`, convenio)
   }
 
-  eliminarConvenio(id:number){
+  deleteConvenio(id:number){
     return this.httpClient.delete(`${this.URL}CONVENIO/deleteConvenio/${id}`)
   }
 
-  editarConvenio(convenio:Convenio, id:number){
+  updateConvenio(convenio:Convenio, id:number){
     return this.httpClient.put<Convenio>(`${this.URL}CONVENIO/updateConvenio/${id}`, convenio)
     }
 }

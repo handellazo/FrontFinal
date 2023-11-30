@@ -1,3 +1,14 @@
+.header {
+  background-color: #073564;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 2px solid #F9AA21;
+  margin-bottom: 20px;
+}
+
 .container{
   width: 100%;
   
@@ -17,33 +28,12 @@ td, th {
   width: 25%;
 }
 
-
-
 button {
   width: 130px; /* Ajusta el ancho a tu preferencia */
   height: 40px; /* Ajusta la altura a tu preferencia */  
   border-radius: 5px;
   color: #fff;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px #073564(0, 0, 0, 0.2);
  
-  background-color: #3498db;
-
-  
-  
-}
-
-.broka{
-  display: flex ;
-  gap: 50px;
-}
-
-.lptm{
-  display: flex;
-  gap: 50px;
-}
-
-.poti{
-  display: flex;
-  gap: 50px;
-
+  background-color: #073564;  
 }

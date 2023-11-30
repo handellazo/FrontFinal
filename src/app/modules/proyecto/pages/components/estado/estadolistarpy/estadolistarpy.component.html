@@ -1,23 +1,4 @@
-<div class="header">LISTA DE PROYECTOS</div>
-
-
-<!-- <div class="filter-section">
-
-  <select (change)="buscar()" [(ngModel)]="selectedSemestre">
-    <option *ngFor="let semestre of semestrelist" [value]="semestre.id">{{ semestre.semestre }}</option>
-  </select>
-
-  <select (change)="buscar()" [(ngModel)]="selectedFacultad" >
-    <option *ngFor="let facultad of facultadlist" [value]="facultad.id">{{ facultad.facultad }}</option>
-</select>
-  
-<select (change)="buscar()" [(ngModel)]="selectedEp">
-    <option *ngFor="let ep of eplist" [value]="ep.id">{{ ep.ep }}</option>
-</select>
-
-  <button (click)="buscar()">Buscar</button>
-</div>
-
+<div class="header">ESTADO DE PROYECTOS</div>
 
 <table>
   <thead>
@@ -32,23 +13,23 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let proyecto of proyectoslist">
+    <tr *ngFor="let proyecto of proyecto">
       <td>{{ proyecto.nombre }}</td>
-      <td>{{ proyecto.estado}}</td>
+      <td><button>Estado</button></td>
       <td>{{ proyecto.ciclo}}</td>
       <td>{{ proyecto.inicio | date: 'dd/MM/yyyy'}}</td>
       <td>{{ proyecto.fin | date: 'dd/MM/yyyy' }}</td>
-      <td>{{ proyecto.semestre.semestre }}</td>
+      <td>{{ proyecto.semestre.nombre }}</td>
       <td>
         <div class="icon-buttons">
-          <button (click)="editItem(proyecto)">
-            <i class="fas fa-pencil-alt"></i>
+          <button>
+            <i class="fas fa-pencil-alt">.</i>
           </button>
-          <button (click)="deleteItem(proyecto)">
-            <i class="fas fa-trash-alt"></i>
+          <button (click)="deleteProyecto(proyecto.id)">
+            <i class="fas fa-trash-alt">.</i>
           </button>
         </div>
       </td>
     </tr>
   </tbody>
-</table> -->
+</table>

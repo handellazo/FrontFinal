@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { EstadoproyectoService } from '../services/estadoproyecto.service';
+import { Component } from '@angular/core';
+import { IProyecto } from 'src/app/core/interface/proyecto.interface';
+import { ProyectoService } from 'src/app/core/services/proyecto.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -9,99 +10,39 @@ import { EstadoproyectoService } from '../services/estadoproyecto.service';
   styleUrls: ['./estadolistarpy.component.css']
 })
 export class EstadolistarpyComponent  {
-  // proyectoslist: Proyectos[] = [];
-  // proyecto: Proyectos;
-  // selectedSemestre: any;
-  // selectedFacultad: any;
-  // selectedEp: any;
+  proyecto: IProyecto[] = [];
 
-   constructor(private router: Router, private estadoproyectoService: EstadoproyectoService) { }
+  constructor(private _ProyectoService: ProyectoService ) { }
 
-//   listarProyectos(){
-//     this.estadoproyectoService.listarProyectos().subscribe({
-//       next: (resp: Proyectos[]) => {
-//         this.proyectoslist = resp;
-//       },
-//       error: (err: any) => {
-//         console.log(err);
-//       }
-//     });
-  
-//   }
-  
+  public getProyectos(){
+   this._ProyectoService.getProyectos().subscribe((res:IProyecto[])=>{
+     this.proyecto = res;
+   })
+ }
+ 
+  ngOnInit() {
+    this.getProyectos();
+  }
 
-//   ngOnInit() {
-//     this.listarProyectos();
-//     this.listarSemestre();
-//   this.listarFacultad();
-//     this.listarEp();
-  
-//   }
-
-//   //Eliminar Proyecto
-//   deleteItem(item: any){
-  
-//   }
-
-//   //Editar Proyecto
-//   editItem(item: any){
-  
-//   }
-
-// // Buscar Proyecto
-//   buscar(){
-//     const selectedSemestre = this.selectedSemestre;
-//     const selectedFacultad = this.selectedFacultad;
-//     const selectedEp = this.selectedEp;
-  
-//     this.estadoproyectoService.buscarProyectos(selectedSemestre, selectedFacultad, selectedEp).subscribe({
-//       next: (resp: any) => {
-//         // Manejar los datos devueltos
-//       },
-//       error: (err: any) => { console.error(err) }
-//     });
-//   }
-
-
-//   // Semestre
-//   semestrelist: SemestreProyecto[] = [];
-//   // EP
-//   eplist: EpProyecto[] = [];
-//   // FACULTAD
-//   facultadlist: FacultadProyecto[] = [];
-  
-//   // SEMESTRE
-//   listarSemestre() {
-//     this.estadoproyectoService.listarSemestre().subscribe({
-//       next: (resp: SemestreProyecto[]) => {
-//         this.semestrelist = resp
-//       },
-//       error: (err: any) => { console.error(err) }
-//     })
-//   }
-
-//   // EP
-//   listarEp() {
-//     this.estadoproyectoService.listarEp().subscribe({
-//       next: (resp: EpProyecto[]) => {
-//         this.eplist = resp
-//       },
-//       error: (err: any) => { console.error(err) }
-//     });
-//   }
-
-//   // FACULTAD
-//   listarFacultad() {
-//     this.estadoproyectoService.listarFacultad().subscribe({
-//       next: (resp: FacultadProyecto[]) => {
-//         this.facultadlist = resp
-//       },
-//       error: (err: any) => { console.error(err) }
-//     });
-//   }
-
-
-
-
-  
+  deleteProyecto(id:number){
+    this._ProyectoService.deleteProyecto(id).subscribe({
+      next: (res:any)=>{
+        console.log(res);
+        this.getProyectos();
+        Swal.fire({
+          title: "Good job!",
+          text: "Se elimino satisfactoriamente!",
+          icon: "success"
+        });
+      },
+      error: (error:any)=>{
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "El convenio esta siendo usado actualmente - No puede ser eliminado",
+        });
+        console.log(error);
+      }
+    })
+  }  
 }

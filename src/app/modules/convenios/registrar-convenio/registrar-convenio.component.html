@@ -1,34 +1,73 @@
-<h2>Registrar Convenio</h2>
-<form (ngSubmit)="addConvenio()">
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre" [(ngModel)]="convenioNuevo.nombre" required>
+<div>
+  <div class="header">REGISTRAR CONVENIO</div>
 
-  <label for="inicio">Fecha Inicio:</label>
-  <input type="date" id="inicio" name="inicio" [(ngModel)]="convenioNuevo.inicio" required>
+  <form (ngSubmit)="addConvenio()">
+  
+    <div class="fila1">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="convenioNuevo.nombre" required>
+      </div>
 
-  <label for="fin">Fecha Fin:</label>
-  <input type="date" id="fin" name="fin" [(ngModel)]="convenioNuevo.fin" required>
+      <div>
+        <label for="inicio">Fecha Inicio:</label>
+        <input type="date" id="inicio" name="inicio" [(ngModel)]="convenioNuevo.inicio" required>
+      </div>
 
-  <label for="tipo">Tipo:</label>
-  <select class="custom-select" id="tipo" [(ngModel)]="convenioNuevo.tipo" (change)="getIdTipoConvenio($event)" required>
-    <option selected value="0">Seleccionar Opcion</option>
-    <option *ngFor="let tipoConvenio of tipoConvenio" [ngValue]="tipoConvenio.id">{{ tipoConvenio.nombre }}</option>
-  </select>
+      <div>
+        <label for="fin">Fecha Fin:</label>
+        <input type="date" id="fin" name="fin" [(ngModel)]="convenioNuevo.fin" required>
+      </div>
+    </div>
 
-  <label for="referencia">Referencia:</label>
-  <input type="text" id="referencia" name="referencia" [(ngModel)]="convenioNuevo.referencia" required>
+    <div class="fila2">
+      <div>
+        <label for="ubicacion">Ubicacion:</label>
+        <select class="custom-select" id="ubicacion" [(ngModel)]="convenioNuevo.ubicacion" (change)="getIdUbicacion($event)" required>
+          <option selected value="0">Seleccionar Opcion</option>
+          <option *ngFor="let ubicacion of ubicacion" [ngValue]="ubicacion.id">{{ ubicacion.distrito }}</option>
+        </select>
+      </div>
 
-  <label for="ubicacion">Ubicacion:</label>
-  <select class="custom-select" id="ubicacion" [(ngModel)]="convenioNuevo.ubicacion" (change)="getIdUbicacion($event)" required>
-    <option selected value="0">Seleccionar Opcion</option>
-    <option *ngFor="let ubicacion of ubicacion" [ngValue]="ubicacion.id">{{ ubicacion.distrito }}</option>
-  </select>
+      <div>
+        <label for="referencia">Referencia:</label>
+        <input type="text" id="referencia" name="referencia" [(ngModel)]="convenioNuevo.referencia" required>
+      </div>
+    </div>
 
-  <label for="archivo">Archivo:</label>
-  <input type="text" id="archivo" name="archivo" [(ngModel)]="convenioNuevo.archivo" required>
+    <div class="fila3">
+      <div>
+        <label for="tipo">Tipo:</label>
+        <select class="custom-select" id="tipo" [(ngModel)]="convenioNuevo.tipo" (change)="getIdTipoConvenio($event)" required>
+          <option selected value="0">Seleccionar Opcion</option>
+          <option *ngFor="let tipoConvenio of tipoConvenio" [ngValue]="tipoConvenio.id">{{ tipoConvenio.nombre }}</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="archivo">Archivo:</label>
+        <input type="text" id="archivo" name="archivo" [(ngModel)]="convenioNuevo.archivo" required>
+      </div>
+  
+      <div>
+        <label for="estado">Estado:</label>
+        <input type="number" id="estado" name="estado" [(ngModel)]="convenioNuevo.estado" required>
+      </div>
+    </div>
 
-  <label for="estado">Estado:</label>
-  <input type="number" id="estado" name="estado" [(ngModel)]="convenioNuevo.estado" required>
+    <div class="fila4">
+    
+      <div class="boton1">
+        <!-- Cambiar onclick="cancelar()" a (click)="cancelar()"-->
+        <button type="button">CANCELAR</button>
+    </div>
 
-  <button type="submit">Registrar Convenio</button>
-</form>
+    <div class="boton2">
+        <!-- Cambiar onclick="Guardar()" a (click)="Guardar()" -->
+        <button type="submit">GUARDAR</button>
+    </div>
+    
+    </div>
+
+  </form>
+</div>

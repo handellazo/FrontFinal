@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
-import { AsignarrolService } from '../services/asignarrol.service';
 import { IProyecto } from 'src/app/core/interface/proyecto.interface';
-import { Proyecto } from 'src/app/core/models/proyecto.model';
+import { ProyectoService } from 'src/app/core/services/proyecto.service';
 
 @Component({
   selector: 'app-asignarrol',
@@ -11,28 +9,18 @@ import { Proyecto } from 'src/app/core/models/proyecto.model';
   styleUrls: ['./asignarrol.component.css']
 })
 export class AsignarrolComponent {
-  proyectoslist: IProyecto[] = [];
-  proyecto: Proyecto;
+  proyecto: IProyecto[] = [];
 
-   constructor(private router: Router, private asignarrol: AsignarrolService ) { }
+   constructor(private _ProyectoService: ProyectoService ) { }
 
-  // listarProyectos(){
-  //   this.asignarrol.listarProyectos().subscribe({
-  //     next: (resp: IProyecto[]) => {
-  //       this.proyectoslist = resp;
-  //     },
-  //     error: (err: any) => {
-  //       console.log(err);
-  //     }
-  //   });
+   public getProyectos(){
+    this._ProyectoService.getProyectos().subscribe((res:IProyecto[])=>{
+      this.proyecto = res;
+    })
+  }
   
-  // }
-  
-  
-  // ngOnInit() {
-  //   this.listarProyectos();
-   
-    
-  // }
+   ngOnInit() {
+     this.getProyectos();
+   }
 
 }

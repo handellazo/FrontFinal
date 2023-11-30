@@ -1,8 +1,8 @@
 export class Semestre{
     id : any;
-    semestre:  string;
+    nombre:  string;
 
     constructor(){
-        this.semestre = '';
+        this.nombre = '';
     }
 }

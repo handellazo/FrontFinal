@@ -24,10 +24,10 @@ export class ProyectoService {
      return this.httpClient.post<Proyecto>(`${this.URL}PROYECTO/addProyecto`, proyecto)
    }
 
-   eliminarProyecto(id:number){
+   deleteProyecto(id:number){
      return this.httpClient.delete(`${this.URL}PROYECTO/deleteProyecto/${id}`)
  }
-  editarProyecto(proyecto:Proyecto, id:number){
+  updateProyecto(proyecto:Proyecto, id:number){
      return this.httpClient.put<Proyecto>(`${this.URL}PROYECTO/updateProyecto/${id}`, proyecto)
     }
 }

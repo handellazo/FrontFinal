@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { IUbicacion } from 'src/app/core/interface/ubicacion';
 import { IConvenio } from 'src/app/core/interface/convenio';
-import { VentanaemergenteComponent } from '../ventanaemergente/ventanaemergente.component';
 import { IProyecto } from 'src/app/core/interface/proyecto.interface';
 import { ITipoPy } from 'src/app/core/interface/tipoPy.interface';
 import { ISemestre } from 'src/app/core/interface/semestre.interface';
@@ -58,7 +55,8 @@ export class FormProyectoComponent {
               private _EpService: EpService,
               private _CursoSemestreService: CursoSemestreService,
               private _UbicacionService: UbicacionService,
-              private _ConvenioService: ConvenioService) { }
+              private _ConvenioService: ConvenioService,
+              private _Router: Router) { }
 
               ngOnInit() {
                    this.getTipoPys();
@@ -68,12 +66,6 @@ export class FormProyectoComponent {
                    this.getUbicacion();
                    this.getConvenios();
                  }
-
-  // // ABRIR VENTANA EMERGENTE DE CURSOS
-  // openPopup() {
-  //   const dialogRef = this.dialog.open(VentanaemergenteComponent);
-  //   dialogRef.afterClosed().subscribe(() => {});
-  // }
 
   formatearFecha(fecha: string | Date): string {
     if (typeof fecha === 'string') {
@@ -258,51 +250,16 @@ export class FormProyectoComponent {
     }
   }
 
-
-  // public inithiliazerInputs() {
-  //   this.usuario = new Proyectos();
-  //   this.formGroup = new FormGroup({
-  //     nombre: new FormControl(this.usuario.nombre, [Validators.required]),
-  //     inicio: new FormControl(this.usuario.inicio, [Validators.required]),
-  //     fin: new FormControl(this.usuario.fin, [Validators.required]),
-  //     anexo: new FormControl(this.usuario.anexo, [Validators.required]),
-  //     estado: new FormControl(this.usuario.estado, [Validators.required]),
-  //     beneficiarios: new FormControl(this.usuario.beneficiarios, [Validators.required]),
-  //     presupuesto: new FormControl(this.usuario.presupuesto, [Validators.required]),
-  //     url_doc: new FormControl(this.usuario.url_doc, [Validators.required]),
-  //     representante: new FormControl(this.usuario.representante, [Validators.required]),
-  //     convenio: new FormControl(this.usuario.convenio, [Validators.required]),
-  //     ubicacion: new FormControl(this.usuario.ubicacion, [Validators.required]),
-  //     ep: new FormControl(this.usuario.ep, [Validators.required]),
-  //     tipoPy: new FormControl(this.usuario.tipoPy, [Validators.required]),
-  //     ciclo: new FormControl(this.usuario.ciclo, [Validators.required]),
-    
-  //   });
-  // }
-  
-
-  // public send() {
-  //   if (this.formGroup.valid) {
-  //     console.log(this.formGroup.value);
-  //   }
-  // }
-
   addProyecto(){
     this._ProyectoService.addProyecto(this.proyectoNuevo).subscribe({
       next: (res:Proyecto)=>{
         console.log(res)
         this.proyectoNuevo = new Proyecto();
         this.getProyectos();
+        this._Router.navigate(['/home/estado'])
       },error:(error:any)=>{
         console.log("el error es: ", error)
       }
     })
   }
-  
-
-    // Cancelar() {
-    //   this.formGroup.reset();
-    // }
-
-  
 }

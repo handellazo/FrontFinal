@@ -1,20 +1,79 @@
 .custom-table-header {
-    background-color: rgb(5, 11, 85);
-    color: white;
-    text-align: center;
-  }
+  background-color: #073564;
+  color: white;
+  text-align: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  border-collapse: separate;
   
-  .custom-table {
-    border-collapse: separate;
-   
-  }
-  
-  .custom-table th, .custom-table td {
-    border-bottom: 2px solid white;
-  }
-  
+}
+
+.bon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
 .bon button.btn.btn-info {
-    margin-left: 50px;
-    border-radius: 100px;
+  margin-left: 50px;
+  border-radius: 13px;
+  background-color: #7dacce;
+  color: rgb(0, 0, 0);
+  margin-right: 32px;
+  padding: 8px 24px; /* Aumenta el padding para hacer el botón más largo */ 
+}
+
+.bon .search-container input[type="text"] {
+  padding: 18px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+  height: 35px;
+}
+
+.bon .search-container button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 0 5px 5px 0;
+}
+
+.bon button.btn-new {
+  background-color: #073564;
+  color: white;
+  padding: 10px 30px;
+  font-size: 16px;
+  border: 8px;
+  margin-left: 32px;
+  border-radius: 10px;
+}
+
+.bon .filtros button.btn.btn-info {
+  background-color: white;
+  color: #000000;
+}
+
+button {
+  padding: 5px 6px;
+  background-color: #4b331c; /* Color de fondo azul */
+  color: #fff; /* Color de texto blanco */
+  border: none;
+  cursor: pointer;
+  margin-right: 5px; /* Márgenes para separar los botones */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Efecto de transición al pasar el mouse */
+
+  /* Cambio de color al pasar el mouse */
+  &:hover {
+    background-color: #4b331c; /* Nuevo color de fondo al pasar el mouse */
+  }
 }

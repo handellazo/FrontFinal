@@ -1,10 +1,16 @@
+<div class="header">CONVENIOS</div>
+
 <div class="bon">
     <button class="btn btn-info">Todos</button>
-    <button class="btn btn-info">Activos</button>
-    <button class="btn btn-info">Inactivos</button>
-    <input type="text" id="searchInput">
-    <button class="fas fa-search"></button>
-    <button routerLink="/home/registrar-convenio" class="btn btn-info">Añadir convenio</button>
+    <div class="filtros">
+        <button class="btn btn-info">Activos</button>
+    <button class="btn btn-info">Inactivos</button>  
+    </div>
+    <div class="search-container">
+        <!-- <input type="text" id="searchInput">
+        <button class="fas fa-search"></button> -->
+    </div>
+    <button routerLink="/home/registrar-convenio" class="btn btn-new">NUEVO</button>
 </div>
 <br>
 
@@ -22,14 +28,23 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let Convenios of convenios">
-            <td>{{Convenios.nombre}}</td>
-            <td>{{formatearFecha(Convenios.inicio)}}</td>
-            <td>{{formatearFecha(Convenios.fin)}}</td>
-            <td>{{Convenios.referencia}}</td>
-            <td>{{Convenios.archivo}}</td>
-            <td>{{Convenios.estado}}</td>
-            <!-- Agrega aquí las acciones que deseas mostrar para cada convenio -->
+        <tr *ngFor="let convenio of convenio">
+            <td>{{convenio.nombre}}</td>
+            <td>{{formatearFecha(convenio.inicio)}}</td>
+            <td>{{formatearFecha(convenio.fin)}}</td>
+            <td>{{convenio.referencia}}</td>
+            <td>{{convenio.archivo}}</td>
+            <td>{{convenio.estado}}</td>
+            <td>
+                <div class="icon-buttons">
+                  <button >
+                    <i class="fas fa-pencil-alt">.</i>
+                  </button>
+                  <button (click)="deleteConvenio(convenio.id)">
+                    <i class="fas fa-trash-alt">.</i>
+                  </button>
+                </div>
+              </td>
         </tr>
     </tbody>
 </table>

@@ -19,7 +19,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ProyectoComponent } from './pages/components/proyecto/proyecto.component';
-import { Proyectoservice } from './services/proyectoservice.service';
 import { FormProyectoComponent } from './pages/components/form-proyecto/form-proyecto.component';
 
 
@@ -48,7 +47,7 @@ import { FormProyectoComponent } from './pages/components/form-proyecto/form-pro
     FormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [Proyectoservice],
+  providers: [],
 
 })
 export class ProyectoModule { }
