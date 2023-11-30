@@ -1,0 +1,34 @@
+<h2>Registrar Convenio</h2>
+<form (ngSubmit)="addConvenio()">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" [(ngModel)]="convenioNuevo.nombre" required>
+
+  <label for="inicio">Fecha Inicio:</label>
+  <input type="date" id="inicio" name="inicio" [(ngModel)]="convenioNuevo.inicio" required>
+
+  <label for="fin">Fecha Fin:</label>
+  <input type="date" id="fin" name="fin" [(ngModel)]="convenioNuevo.fin" required>
+
+  <label for="tipo">Tipo:</label>
+  <select class="custom-select" id="tipo" [(ngModel)]="convenioNuevo.tipo" (change)="getIdTipoConvenio($event)" required>
+    <option selected value="0">Seleccionar Opcion</option>
+    <option *ngFor="let tipoConvenio of tipoConvenio" [ngValue]="tipoConvenio.id">{{ tipoConvenio.nombre }}</option>
+  </select>
+
+  <label for="referencia">Referencia:</label>
+  <input type="text" id="referencia" name="referencia" [(ngModel)]="convenioNuevo.referencia" required>
+
+  <label for="ubicacion">Ubicacion:</label>
+  <select class="custom-select" id="ubicacion" [(ngModel)]="convenioNuevo.ubicacion" (change)="getIdUbicacion($event)" required>
+    <option selected value="0">Seleccionar Opcion</option>
+    <option *ngFor="let ubicacion of ubicacion" [ngValue]="ubicacion.id">{{ ubicacion.distrito }}</option>
+  </select>
+
+  <label for="archivo">Archivo:</label>
+  <input type="text" id="archivo" name="archivo" [(ngModel)]="convenioNuevo.archivo" required>
+
+  <label for="estado">Estado:</label>
+  <input type="number" id="estado" name="estado" [(ngModel)]="convenioNuevo.estado" required>
+
+  <button type="submit">Registrar Convenio</button>
+</form>

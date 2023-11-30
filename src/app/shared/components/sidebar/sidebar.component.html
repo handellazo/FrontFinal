@@ -1,0 +1,91 @@
+<nav class="menu__side">
+  <div class="name__page">
+    <i class="fas fa-home" [routerLink]="['/home/welcome']"></i>
+    <h4>UPEU</h4>
+  </div>
+  
+  <ul class="options__menu">
+    
+    <li>
+      <a class="option" [routerLink]="['/home/convenio']">
+        <i class="far fa-file" title="Portafolio"></i>
+        <h4>Convenio</h4>
+      </a>
+    </li>
+
+
+
+    <li class="selected">
+      <a class="option" (click)="toggleSubmenu()">
+        <i class="fas fa-home" title="Inicio"></i>
+        <h4>Proyectos</h4>
+      </a>
+
+      <ul class="sub-options__menu" *ngIf="isSubmenuVisible">
+        <li>
+          <a class="sub-option" [routerLink]="['/home/proyecto']">
+            <i class="" title="Crear Proyecto"></i>
+            <h4>Crear Proyecto</h4>
+          </a>
+        </li>
+        <li>
+          <a class="sub-option" [routerLink]="['/home/estado']">
+            <i class="" title="Estado"></i>
+            <h4>Estado</h4>
+          </a>
+        </li>
+        <li>
+          <a class="sub-option" [routerLink]="['/home/asignacion']">
+            <i class="" title="Opción 2"></i>
+            <h4>Asignacion</h4>
+          </a>
+        </li>
+
+      </ul>
+    </li>
+    
+    <li class="selected">
+      <a class="option" (click)="toggleActividadSubmenu()">
+        <i class="fas fa-users" title="Inicio"></i>
+        <h4>Actividad</h4>
+      </a>
+    
+      <ul class="sub-options__menu" *ngIf="isActividadSubmenuVisible">
+        <li>
+          <a class="sub-option" [routerLink]="['/home/actividad']">
+            <i class="" title="Crear Proyecto"></i>
+            <h4>Participacion</h4>
+          </a>
+        </li>
+        <li>
+          <a class="sub-option" [routerLink]="['/home/ejecucion']">
+            <i class="" title="Crear Proyecto"></i>
+            <h4>Ejecucion</h4>
+          </a>
+        </li>
+        <li>
+          <a class="sub-option" [routerLink]="['/home/informe-equipo']">
+            <i class="" title="Crear Proyecto"></i>
+            <h4>Informe Equipo</h4>
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    <li class="selected">
+      <a class="option" [routerLink]="['/home/informe']">
+        <i class="far fa-file" title="Inicio"></i>
+        <h4>Informe</h4>
+      </a>
+    </li>
+    <li class="selected">
+      <a class="option" [routerLink]="['/home/difusion']">
+        <i class="far fa-file" title="Inicio"></i>
+        <h4>Difusion</h4>
+      </a>
+    </li>
+   
+    
+    
+  </ul>
+</nav>

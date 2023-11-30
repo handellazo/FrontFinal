@@ -1,0 +1,2 @@
+Dentro de la carpeta modules se encuentra los componentes que no se van a 
+repetir la vista de cada usuario o cada rol dentro de la app web.

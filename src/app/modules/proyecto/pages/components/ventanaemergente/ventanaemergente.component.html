@@ -1,0 +1,29 @@
+
+<div class="contenedor">
+    <div>
+      <div class="header">
+       
+      </div>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div formArrayName="items">
+          <div *ngFor="let item of items.controls; let i = index" class="form-group">
+            <div class="form-row">
+              <div class="col">
+                <label for="curso{{i}}">Curso:</label>
+                <input type="text" id="curso{{i}}" formControlName="curso">
+              </div>
+              <div class="col">
+                <label for="docente{{i}}">Docente:</label>
+                <input type="text" id="docente{{i}}" formControlName="docente">
+              </div>
+              <div class="col">
+                <button type="button" (click)="removeItem(i)">-</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="addItem()">+</button>
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+    </div>

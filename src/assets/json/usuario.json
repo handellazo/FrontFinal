@@ -1,0 +1,52 @@
+[
+    {
+      "name": "John Doe",
+      "usarname": "johndoe",
+      "pasword": "1234567890"
+    },
+    {
+      "name": "Jane Smith",
+      "usarname": "janesmith",
+      "pasword": "0987654321"
+    },
+    {
+      "name": "Michael Johnson",
+      "usarname": "michaelj",
+      "pasword": "qwertyuiop"
+    },
+    {
+      "name": "Emily Davis",
+      "usarname": "emilyd",
+      "pasword": "asdfghjkl"
+    },
+    {
+      "name": "Daniel Martinez",
+      "usarname": "danm",
+      "pasword": "zxcvbnm"
+    },
+    {
+      "name": "Sophia Wilson",
+      "usarname": "sophiaw",
+      "pasword": "12345"
+    },
+    {
+      "name": "David Anderson",
+      "usarname": "davida",
+      "pasword": "67890"
+    },
+    {
+      "name": "Olivia Thomas",
+      "usarname": "oliviat",
+      "pasword": "qazwsx"
+    },
+    {
+      "name": "James Garcia",
+      "usarname": "jamesg",
+      "pasword": "edcrfv"
+    },
+    {
+      "name": "Isabella Rodriguez",
+      "usarname": "isabellar",
+      "pasword": "tgbnhy"
+    }
+  ]

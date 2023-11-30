@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#home {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../../../assets/mg/lamb-cover-manitos.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+
+.diseño {
+    animation: go-back 1s;
+    margin-top: 30px;
+    margin-left: 45px;
+    width: 200px;
+    height: 220px;
+    
+    background-color: #0009;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.convenios {
+    margin-top: 40px;
+    margin-left: 35px;
+    width: 100px;
+    height: 100px;
+}
+
+.proyectos {
+    margin-top: 40px;
+    margin-left: 35px;
+    width: 100px;
+    height: 100px;
+}
+
+.informes {
+    margin-top: 40px;
+    margin-left: 35px;
+    width: 100px;
+    height: 100px;
+}
+
+.difusion{
+    margin-top: 40px;
+    margin-left: 35px;
+    width: 100px;
+    height: 100px;
+}
+
+.actividades {
+    margin-top: 40px;
+    margin-left: 35px;
+    width: 100px;
+    height: 100px;
+}
+
+.control{
+    margin-top: 40px;
+    margin-left: 35px;
+    width: 100px;
+    height: 100px;
+}
+
+
+.texto {
+    margin-top: 5px;
+    margin-left: 35px;
+    width: 130px;
+    height: 60px;
+    color: #FFF;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+
+}
+
+.identi {
+    height: 100%;
+    animation: go_barra 1s;
+    
+    text-align: center;
+    width: 60%;
+    height: 100%;
+    background:rgb(2, 2, 54) ;
+    border-radius: 2%;
+}
+
+.logo {
+    animation: go_barra 1s;
+    margin-top: 50px;
+    width: 274px;
+    height: 187px;
+
+}
+
+
+
+.login {
+    text-align: center;
+    margin: 0 auto;
+    width: 613px;
+    height: 685px;
+    border-radius: 50px;
+    border: 5px solid #F7A800;
+    background: rgba(1, 66, 119, 0.95);
+}
+
+.contenido_opciones {
+    width: 100%;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.icono {
+    animation: go_barra 1s;
+    margin-top: 40%;
+    width: 180px;
+    height: 180px;
+}
+
+.nm{
+    animation: go_barra 1s;
+    margin-top: 5%;
+    margin-left: 15px;
+    color: #FFF;
+    font-family: Open Sans;
+    font-size: 20px;
+
+}
+
+
+
+.REGRESAR {
+    animation: go_barra 1s;
+    margin-top: 10%;
+    margin-left: 33%;
+    width: 200px;
+    height: 58px;
+    border-radius: 50px;
+    background: #F7A800;
+    
+}
+
+.se {
+    padding-top: 18px;
+    margin-top: 25px;
+    color:black;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    text-decoration: none;
+
+}
+
+.pl{
+    text-decoration: none;
+}
+
+@keyframes go-back {
+    0% {
+        transform: translateY(50px);
+    }
+
+    70% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes go_barra {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

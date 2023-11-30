@@ -1,0 +1,162 @@
+<div>
+    <div class="header">NUEVO PROYECTO</div>
+
+    <form (ngSubmit)="addProyecto()">
+
+        <div class="fila1">
+            <!-- Nombre de proyecto -->
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" [(ngModel)]="proyectoNuevo.nombre" required>
+            </div>
+
+            <!-- Tipo de proyecto -->
+            <div>
+                <label for="tipo">Tipo:</label>
+                <select  id="tipo" name="tipo" [(ngModel)]="proyectoNuevo.tipoPY" (change)="getIdTipoPy($event)" required>
+                    <option selected value="0">Seleccionar Opcion</option>
+                    <option *ngFor="let tipoPy of tipoPy" [ngValue]="tipoPy.id">{{ tipoPy.nombre}}</option>
+                </select>
+            </div>
+            
+            <!-- Estado de proyecto -->
+            <div>
+                <label for="estado">Estado</label>
+                <input type="number" id="estado" name="estado" [(ngModel)]="proyectoNuevo.estado" required>
+            </div>
+        </div>
+
+        <div class="fila2">
+
+            <!-- Departamento -->
+            <div>
+                <label for="departamento">Departamento:</label>
+                <select  id="departamento" name="departamento" [(ngModel)]="proyectoNuevo.ubicacion" (change)="getIdUbicacion($event)" required>
+                    <option selected value="0">Seleccionar Opcion</option>
+                    <option *ngFor="let ubicacion of ubicacion" [ngValue]="ubicacion.id">{{ ubicacion.departamento}}</option>
+                </select>
+            </div>
+
+            <!-- Provincia -->
+            <div>
+                <label for="provincia">Provincia:</label>
+                <select  id="provincia" name="provincia" [(ngModel)]="proyectoNuevo.ubicacion" (change)="getIdUbicacion($event)" required>
+                    <option selected value="0">Seleccionar Opcion</option>
+                    <option *ngFor="let ubicacion of ubicacion" [ngValue]="ubicacion.id">{{ ubicacion.provincia}}</option>
+                </select>
+            </div>
+
+            <!-- Distrito -->
+            <div>
+                <label for="ubicacion">Distrito:</label>
+                <select  id="ubicacion" name="ubicacion" [(ngModel)]="proyectoNuevo.ubicacion" (change)="getIdUbicacion($event)" required>
+                    <option selected value="0">Seleccionar Opcion</option>
+                    <option *ngFor="let ubicacion of ubicacion" [ngValue]="ubicacion.id">{{ ubicacion.distrito}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="fila3">
+
+            <!-- Anexo -->
+            <div>
+                <label for="anexo">Referencia</label>
+                <input type="text" id="anexo" name="anexo" [(ngModel)]="proyectoNuevo.anexo" required>
+            </div>
+
+            <!-- Presupuesto -->
+            <div>
+                <label for="presupuesto">Presupuesto</label>
+                <input type="number" id="presupuesto" name="presupuesto" [(ngModel)]="proyectoNuevo.presupuesto" required>
+            </div>
+
+            <!-- Beneficiarios -->
+            <div>
+                <label for="beneficiarios">Beneficiarios</label>
+                <input type="number" id="beneficiarios" name="beneficiarios" [(ngModel)]="proyectoNuevo.beneficiarios" required>
+            </div>
+        </div>
+
+        <div class="fila4">
+
+            <!-- EP -->
+            <div>
+            <label for="ep">EP:</label>
+                <select  id="ep" name="ep" [(ngModel)]="proyectoNuevo.ep" (change)="getIdEp($event)" required>
+                    <option selected value="0">Seleccionar Opcion</option>
+                    <option *ngFor="let ep of ep" [ngValue]="ep.id">{{ ep.nombre}}</option>
+                </select>
+            </div>
+            <!-- Semestre -->
+            <div>
+            <label for="semestre">Semestre:</label>
+                <select  id="semestre" name="semestre" [(ngModel)]="proyectoNuevo.semestre" (change)="getIdSemestre($event)" required>
+                    <option selected value="0">Seleccionar Opcion</option>
+                    <option *ngFor="let semestre of semestre" [ngValue]="semestre.id">{{ semestre.semestre}}</option>
+                </select>
+            </div>
+            <!-- Ciclo -->
+            <div>
+                <label for="ciclo">Ciclo</label>
+                <input type="text" id="ciclo" name="ciclo" [(ngModel)]="proyectoNuevo.ciclo" required>
+            </div>
+
+            <!--Url documento -->
+            <div>
+                <label for="url_doc">Url del documento subido</label>
+                <input type="text" id="url_doc" name="url_doc" [(ngModel)]="proyectoNuevo.url_doc" required>
+            </div>
+        </div>
+
+        <div class="fila5">
+
+            <!-- Fecha Inicial -->
+            <div>
+                <label for="inicio">Fecha Inicial</label>
+                <input type="date" id="inicio" name="inicio" [(ngModel)]="proyectoNuevo.inicio" required>
+            </div>
+
+            <!-- Fecha Final -->
+            <div>
+                <label for="fin">Fecha Final</label>
+                <input type="date" id="fin" name="fin" [(ngModel)]="proyectoNuevo.fin" required>
+            </div>
+
+            <!-- Representante -->
+            <div>
+                <label for="representante">Representante</label>
+                <input type="text" id="representante" name="representante" [(ngModel)]="proyectoNuevo.representante" required>
+            </div>
+
+
+            <!-- Convenios Activos -->
+            <div>
+                <label for="convenio">Convenio:</label>
+                <select  id="convenio" name="convenio" [(ngModel)]="proyectoNuevo.convenio" (change)="getIdConvenio($event)" required>
+                    <option selected value="0">Seleccionar Opcion</option>
+                    <option *ngFor="let convenio of convenio" [ngValue]="convenio.id">{{ convenio.nombre}}</option>
+                </select>
+            </div>
+
+            <!-- CursoSemestre -->
+            <div>
+                <label for="cursoSemestre">Curso Principal:</label>
+                <select  id="cursoSemestre" name="cursoSemestre" [(ngModel)]="proyectoNuevo.cursoSemestre" (change)="getIdCursoSemestre($event)" required>
+                    <option selected value="0">Seleccionar Opcion</option>
+                    <option *ngFor="let cursoSemestre of cursoSemestre" [ngValue]="cursoSemestre.id">{{ cursoSemestre.curso}}</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="boton1">
+            <!-- Cambiar onclick="cancelar()" a (click)="cancelar()"-->
+            <button type="button">CANCELAR</button>
+        </div>
+
+        <div class="boton2">
+            <!-- Cambiar onclick="Guardar()" a (click)="Guardar()" -->
+            <button type="submit">GUARDAR</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,2 @@
+Dentro de la carpeta shared se encuentra los componentes que se van a 
+repetir como el sidebar, el header y el footer.

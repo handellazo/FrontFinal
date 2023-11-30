@@ -1,0 +1,2 @@
+// en el bakend no olvides que tienes que poner @CrossOrigin(origins = "http://localhost:4200")
+// en el controller de cada entidad o la correspondiente

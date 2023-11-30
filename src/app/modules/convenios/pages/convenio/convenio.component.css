@@ -1,0 +1,49 @@
+.container{
+  width: 100%;
+  
+}
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 240px;
+  
+}
+
+td, th {
+  width: 25%;
+}
+
+
+
+button {
+  width: 130px; /* Ajusta el ancho a tu preferencia */
+  height: 40px; /* Ajusta la altura a tu preferencia */  
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+ 
+  background-color: #3498db;
+
+  
+  
+}
+
+.broka{
+  display: flex ;
+  gap: 50px;
+}
+
+.lptm{
+  display: flex;
+  gap: 50px;
+}
+
+.poti{
+  display: flex;
+  gap: 50px;
+
+}

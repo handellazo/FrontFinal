@@ -1,0 +1,35 @@
+<div class="bon">
+    <button class="btn btn-info">Todos</button>
+    <button class="btn btn-info">Activos</button>
+    <button class="btn btn-info">Inactivos</button>
+    <input type="text" id="searchInput">
+    <button class="fas fa-search"></button>
+    <button routerLink="/home/registrar-convenio" class="btn btn-info">Añadir convenio</button>
+</div>
+<br>
+
+
+<table class="table table-striped custom-table">
+    <thead class="custom-table-header">
+        <tr>
+            <th>NOMBRE</th>
+            <th>TIPO</th>
+            <th>INICIO</th>
+            <th>FIN</th>
+            <th>DISTRITO</th>
+            <th>ESTADO</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Convenios of convenios">
+            <td>{{Convenios.nombre}}</td>
+            <td>{{formatearFecha(Convenios.inicio)}}</td>
+            <td>{{formatearFecha(Convenios.fin)}}</td>
+            <td>{{Convenios.referencia}}</td>
+            <td>{{Convenios.archivo}}</td>
+            <td>{{Convenios.estado}}</td>
+            <!-- Agrega aquí las acciones que deseas mostrar para cada convenio -->
+        </tr>
+    </tbody>
+</table>
