@@ -35,20 +35,6 @@ export class FormProyectoComponent {
 
   datePipe: DatePipe = new DatePipe('en-US');
 
-  // //CICLO
-  ciclolist = [
-     { idciclo: 1, nombre: 'I' },
-     { idciclo: 2, nombre: 'II' },
-     { idciclo: 3, nombre: 'III' },
-     { idciclo: 4, nombre: 'IV' },
-     { idciclo: 5, nombre: 'V' },
-     { idciclo: 6, nombre: 'VI' },
-     { idciclo: 7, nombre: 'VII' },
-     { idciclo: 8, nombre: 'VIII' },
-     { idciclo: 9, nombre: 'IX' },
-     { idciclo: 10, nombre: 'X' }
-   ];
-
   constructor(private _ProyectoService: ProyectoService, 
               private _TipoPyService: TipoPyService,
               private _SemestreService: SemestreService,
@@ -261,5 +247,9 @@ export class FormProyectoComponent {
         console.log("el error es: ", error)
       }
     })
+  }
+
+  cancelarProyecto(){
+    this._Router.navigate(['/home/estado'])
   }
 }

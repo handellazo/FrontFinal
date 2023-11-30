@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegistrarConvenioComponent } from './registrar-convenio.component';
+import { ActualizarConvenioComponent } from './actualizar-convenio.component';
 
 const routes: Routes = [
- { path:'',
-  component:RegistrarConvenioComponent,
-  outlet:"child"},
-  
+  {
+    path: '',
+    component: ActualizarConvenioComponent,
+    outlet:"child"
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class RegistrarConvenioRoutingModule { }
+export class ActualizarConvenioRoutingModule { }

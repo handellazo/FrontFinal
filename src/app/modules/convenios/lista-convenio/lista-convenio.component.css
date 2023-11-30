@@ -1,3 +1,14 @@
+.header {
+  background-color: #073564;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 2px solid #F9AA21;
+  margin-bottom: 20px;
+}
+
 .custom-table-header {
   background-color: #073564;
   color: white;

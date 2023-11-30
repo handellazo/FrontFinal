@@ -3,6 +3,7 @@ import { IConvenio } from 'src/app/core/interface/convenio';
 import { DatePipe } from '@angular/common';
 import { ConvenioService } from 'src/app/core/services/convenio.service';
 import Swal from 'sweetalert2';
+import { Convenio } from 'src/app/core/models/convenio.model';
 
 @Component({
   selector: 'app-lista-convenio',
@@ -11,12 +12,13 @@ import Swal from 'sweetalert2';
 })
 export class ListaConvenioComponent implements OnInit {
   convenio: IConvenio[] = [];
+  convenioNuevo : Convenio = new Convenio();
 
-   constructor(private _ConvenioService: ConvenioService ) { }
+  constructor(private _ConvenioService: ConvenioService ) { }
   
-   ngOnInit() {
+  ngOnInit() {
      this.getConvenios();
-   }
+  }
 
   datePipe: DatePipe = new DatePipe('en-US');
 
@@ -52,6 +54,18 @@ export class ListaConvenioComponent implements OnInit {
           title: "Oops...",
           text: "El convenio esta siendo usado actualmente - No puede ser eliminado",
         });
+        console.log(error);
+      }
+    })
+  }
+
+  getConvenioSingle(id:number){
+    this._ConvenioService.getConvenioSingle(id).subscribe({
+      next: (res:any)=>{
+        console.log(res)
+        this.convenioNuevo={...res
+        }
+      },error:(error : any)=>{
         console.log(error);
       }
     })

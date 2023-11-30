@@ -12,8 +12,8 @@ const routes: Routes = [
     outlet:"child"
   },
   {path: 'convenio',component:ListaConvenioComponent},
-  // {path:'actualizar-convenio',component : ActualizarConvenioComponent},
-  // {path:'registrar-convenio',component : RegistrarConvenioComponent}
+  //{path:'actualizar-convenio',component : ActualizarConvenioComponent},
+  //{path:'registrar-convenio/:id',component : RegistrarConvenioComponent}
 
 ];
 

@@ -121,5 +121,9 @@ export class RegistrarConvenioComponent {
     })
   }
 
+  cancelarConvenio(){
+    this._Router.navigate(['/home/convenio'])
+  }
+
   }
 
